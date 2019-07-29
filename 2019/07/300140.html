@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>aaa</title>
+  <script>
+  var body;
+  var table;
+  var tbody;
+
+  window.onload = function(){
+    var i;
+    var j;
+    var tr;
+    var td;
+
+    body = document.getElementsByTagName("body")[0];
+
+    table = document.createElement("table");
+    table.setAttribute("border", "1");
+    body.appendChild(table);
+
+    tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+    
+    // 반복문을 생성하여 tr과 td를 만들고, 그 안에 문자 A 를 넣음.
+    for(i = 0; i < 2; i++){ // tr 만들때 2바퀴 돌림. 
+      tr = document.createElement("tr");
+      tbody.appendChild(tr);
+      for(j = 0; j < 3; j++){ // td 만들때 3바퀴 돌림.
+        td = document.createElement("td");
+        tr.appendChild(td);
+        td.textContent = "A";
+      }
+    }
+    // 반복문 끝.
+
+    console.log(body);
+
+  };
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
