@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+  <script>
+  var canvas, ctx;
+  var img;
+  var h, w;
+  var x = 0,
+  y = 0;
+  window.onload = function(){
+    canvas = document.getElementById("mycanvas");
+    ctx = canvas.getContext("2d");
+    var button = document.getElementById("button");
+    img = new Image();
+    img.onload = function() {
+    console.log(img.naturalHeight, img.naturalWidth);
+      h = img.naturalHeight;
+      w = img.naturalWidth;
+
+      rate = w / h; //이미지의 비율을 잡음, 약 1.4
+      
+      button.onclick = drawCat;
+    };
+    img.src = "./images/iibm.0.jpg";
+  };
+
+  function drawCat() {
+    random_a = Math.random()*128; //최초가로초기화, 128 이하까지만 랜덤설정.
+    random_b = random_a * rate; //최초세로초기화, 가로에 이미지의 비율을 곱함.
+    
+    while(random_b > 86){ //세로가 86보다 크다면
+      random_a = Math.random()*128; //가로재설정
+      random_b = random_a * rate; //세로재설정
+      
+      if(random_b > 86){ // 세로가 86보다 크다면
+        console.log('oops!', random_b); // 웁스!. 틀렸어!
+        continue; //while 처음으로 돌아가!
+      } else { // 세로가 86과 작거나 같다면
+        console.log('hu~!', random_b); // 휴~ 드디어 맞았네!
+      }
+      
+    }
+    
+    console.log('ok! drawing!', random_b); //while 문을 빠져나오면서 세로값을 확인함.
+    ctx.drawImage(img,x,y,random_a,random_b); //최종 가로,세로로 그림을 그림
+    
+    x += 20;
+    y += 20;
+  }
+
+  </script>
+</head>
+
+<body>
+<canvas id="mycanvas" width="640" height="400"></canvas>
+
+<p><input type="button" value="click" id="button"></p>
+</body>
+
+</html>
