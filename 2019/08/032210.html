@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    html {height: 100%;}
+    body {margin: 0; height: 100%;}
+    /* 베이스가 되는 html, body 의 초기화 및 table 의 높이값을 반영하기 위한 height 100% 추가*/
+
+    table {
+      border: 1px solid blue;
+      /* 실제 table 전체의 영역를 보기위해 외곽선을 줌 */
+      
+      border-spacing: 10px 10px; 
+      /* 아래의 cellspacing:10; 과 같은 효과, 이게 css 내부의 올바른 표기법임 */
+      
+      /*align: center;*/ 
+      /* 아래의 margin-left(right): auto; 로 중앙정렬 대체*/
+      margin-left: auto; 
+      margin-right: auto;
+      
+      width: 52%; 
+      
+      height: 95%; 
+      /* html, body 에 height 값이 지정되어야 해당 속성이 먹힘*/
+      
+      /* cellpadding: 20px; */ 
+      /* td 에 padding: 20px 을 주는것으로 대체바람 */
+
+      /* cellspacing:10; */
+      /* 위의 border-spacing: 10px 10px 과 같은 효과, css 내부에 이렇게 쓰는것은 옳지 않음 */
+    }
+    
+    td {
+      border: 1px solid red;
+    }
+
+    @media screen and (max-width: 800px) {
+      table {width: 100%;}
+      /* 실제 td의 영역를 보기위해 외곽선을 줌 */
+    }
+  </style>
+</head>
+<body>
+  <table class="a">
+    <tr>
+      <td>aaa</td>
+    </tr>
+  </table>
+</body>
+</html>
