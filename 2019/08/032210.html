@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- 반응형을 위한 media query 를 쓰려면 위의 'meta' 코드가 반드시 필요함 -->
   <style>
     html {height: 100%;}
     body {margin: 0; height: 100%;}
@@ -38,7 +39,9 @@
     }
 
     @media screen and (max-width: 800px) {
-      table {width: 100%;}
+      table {
+        width: 100%;
+      }
       /* 실제 td의 영역를 보기위해 외곽선을 줌 */
     }
   </style>
