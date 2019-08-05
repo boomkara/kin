@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<head> 
+<meta charset="utf-8"> 
+<title></title> 
+<script> 
+window.onload=function(){ 
+  
+  // var stylewidth=document.querySelector("p").style.width; 
+  // 위의 소스는 inlile css 의 값을 반환해줌
+  
+  var stylewidth=getComputedStyle(document.querySelector("p")).width;
+  //위의 소스는 internal css 와 extenal css 의 값을 반환해줌
+  
+  document.querySelector("p").innerHTML=stylewidth; 
+} 
+</script> 
+<style> 
+p{border:mediumvioletred 3px solid; width:300px;} 
+</style> 
+</head> 
+<body> 
+<p></p>  
+</body> 
+</html> 
