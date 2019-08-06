@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <span id="span">보호</span>
+      <p id="img"><img src="https://i.imgur.com/KlY26EH.jpg"/></p>
+    </div>
+    <script type="text/javascript">
+    var protected = '보호';
+      var span = document.getElementById('span').textContent;
+      if( protected == span) {
+        $( '#img' ).html( '<img src="https://i.imgur.com/ZOG6ciP.jpg"/>' );
+      }
+    </script>
+  </body>
+</html>
